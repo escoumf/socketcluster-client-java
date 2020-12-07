@@ -481,9 +481,9 @@ public class Socket extends Emitter {
                     logger.info(name + value + "\n");
                 }
             }
+            reconnect();
         } catch (WebSocketException e) {
             listener.onConnectError(Socket.this, e);
-        } finally {
             reconnect();
         }
 
