@@ -483,6 +483,7 @@ public class Socket extends Emitter {
             }
         } catch (WebSocketException e) {
             listener.onConnectError(Socket.this, e);
+        } finally {
             reconnect();
         }
 
